@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lógica y Matemática para Obstetricia</title>
+  <style>
+    :root{
+      --bg:#0b1020;
+      --panel:#131a33;
+      --panel-2:#1a2242;
+      --text:#f4f7ff;
+      --muted:#b7c3e2;
+      --accent:#6ee7f9;
+      --accent-2:#a78bfa;
+      --ok:#4ade80;
+      --warn:#fbbf24;
+      --danger:#fb7185;
+      --shadow:0 18px 40px rgba(0,0,0,.28);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,Segoe UI,Arial,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, rgba(110,231,249,.15), transparent 20%),
+        radial-gradient(circle at 90% 10%, rgba(167,139,250,.17), transparent 26%),
+        linear-gradient(180deg,#0a0f1f 0%, #0c1328 55%, #0a1020 100%);
+      line-height:1.6;
+    }
+    .container{width:min(1180px,92vw); margin:auto}
+    header{
+      position:sticky; top:0; z-index:10;
+      backdrop-filter: blur(10px);
+      background:rgba(10,15,31,.72);
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    nav{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:14px 0}
+    nav .brand{font-weight:800; letter-spacing:.3px}
+    nav .links{display:flex; gap:14px; flex-wrap:wrap}
+    nav a{color:var(--muted); text-decoration:none; font-size:.95rem}
+    nav a:hover{color:var(--accent)}
+
+    .hero{padding:56px 0 30px}
+    .hero-grid{display:grid; grid-template-columns:1.2fr .8fr; gap:24px; align-items:center}
+    .badge{display:inline-flex; gap:8px; align-items:center; padding:8px 14px; border-radius:999px; background:rgba(110,231,249,.12); color:var(--accent); border:1px solid rgba(110,231,249,.28); font-size:.92rem}
+    h1{font-size:clamp(2rem,5vw,4rem); line-height:1.05; margin:16px 0 10px}
+    .lead{font-size:1.08rem; color:var(--muted); max-width:700px}
+    .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:22px}
+    .btn{padding:12px 18px; border-radius:14px; text-decoration:none; font-weight:700; box-shadow:var(--shadow)}
+    .btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#0a1020}
+    .btn-secondary{background:rgba(255,255,255,.06); color:var(--text); border:1px solid rgba(255,255,255,.08)}
+    .hero-card,.card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); box-shadow:var(--shadow)}
+    .hero-card{padding:22px}
+    .pulse-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:18px}
+    .metric{padding:16px; background:rgba(255,255,255,.04); border-radius:18px}
+    .metric .n{font-size:1.7rem; font-weight:800}
+    .metric .t{color:var(--muted); font-size:.95rem}
+
+    section{padding:28px 0}
+    .section-title{font-size:clamp(1.4rem,3vw,2.2rem); margin-bottom:8px}
+    .section-sub{color:var(--muted); margin:0 0 22px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .grid-2{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
+    .card{padding:22px}
+    .card h3{margin-top:0}
+    .tag{display:inline-block; padding:4px 10px; border-radius:999px; font-size:.78rem; background:rgba(167,139,250,.14); color:#d7c8ff; margin-bottom:10px}
+    ul.clean{padding-left:18px; margin:0}
+    ul.clean li{margin:8px 0}
+    .mini-note{font-size:.95rem; color:var(--muted)}
+
+    .chart-wrap{padding:18px; background:rgba(255,255,255,.03); border-radius:18px; border:1px solid rgba(255,255,255,.08)}
+    canvas{width:100%; max-width:100%; display:block}
+
+    .logic-table{width:100%; border-collapse:collapse; overflow:hidden; border-radius:16px; font-size:.95rem}
+    .logic-table th,.logic-table td{padding:10px 12px; border-bottom:1px solid rgba(255,255,255,.08); text-align:center}
+    .logic-table th{background:rgba(110,231,249,.10)}
+    .logic-table tr:hover td{background:rgba(255,255,255,.03)}
+    .true{color:var(--ok); font-weight:800}
+    .false{color:var(--danger); font-weight:800}
+
+    .operator-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    .operator{padding:16px; border-radius:18px; background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08)}
+    .operator .symbol{font-size:1.9rem; font-weight:800; color:var(--accent)}
+
+    .quiz{display:grid; grid-template-columns:1fr; gap:14px}
+    .question{padding:18px; background:rgba(255,255,255,.03); border-radius:18px; border:1px solid rgba(255,255,255,.08)}
+    .question button{margin-top:10px; border:none; background:linear-gradient(135deg,var(--accent),var(--accent-2)); color:#08101f; font-weight:800; padding:10px 16px; border-radius:12px; cursor:pointer}
+    .answer{margin-top:10px; color:var(--muted); display:none}
+
+    .refs li{margin:12px 0}
+    .refs a{color:var(--accent)}
+    footer{padding:28px 0 50px; color:var(--muted); font-size:.94rem}
+
+    @media (max-width: 900px){
+      .hero-grid,.grid-3,.grid-2,.operator-grid{grid-template-columns:1fr}
+      nav{align-items:flex-start; flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Lógica y Matemática • Obstetricia</div>
+        <div class="links">
+          <a href="#conceptos">1.1 Conceptos</a>
+          <a href="#proposiciones">1.2 Proposiciones</a>
+          <a href="#operadores">1.3 Operadores</a>
+          <a href="#actividad">Actividad</a>
+          <a href="#referencias">Referencias</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Presentación web interactiva • nivel universitario</span>
+          <h1>Características de la <span style="color:var(--accent)">Lógica</span> y la <span style="color:var(--accent-2)">Matemática</span></h1>
+          <p class="lead">Diseñada para estudiantes de Obstetricia: conceptos claros, ejemplos vinculados con decisiones clínicas, gráficos visuales, operadores lógicos básicos y práctica inmediata para fortalecer el razonamiento académico.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#conceptos">Empezar</a>
+            <a class="btn btn-secondary" href="#actividad">Ir a la práctica</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3 style="margin-top:0">¿Por qué importa en Obstetricia?</h3>
+          <p class="mini-note">Porque cada decisión clínica exige interpretar datos, verificar condiciones y argumentar con precisión.</p>
+          <div class="pulse-grid">
+            <div class="metric"><div class="n">Lógica</div><div class="t">Ayuda a decidir si un enunciado es válido o no.</div></div>
+            <div class="metric"><div class="n">Matemática</div><div class="t">Permite medir, comparar, estimar y modelar.</div></div>
+            <div class="metric"><div class="n">Precisión</div><div class="t">Reduce errores al interpretar información.</div></div>
+            <div class="metric"><div class="n">Evidencia</div><div class="t">Favorece argumentos claros y sustentados.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="conceptos">
+      <div class="container">
+        <h2 class="section-title">1.1 Conceptos básicos de lógica y matemática</h2>
+        <p class="section-sub">La lógica estudia las reglas del razonamiento correcto; la matemática organiza cantidades, relaciones, estructuras y patrones.</p>
+        <div class="grid-3">
+          <article class="card">
+            <div class="tag">Lógica</div>
+            <h3>¿Qué es?</h3>
+            <ul class="clean">
+              <li>Analiza si una conclusión se deriva correctamente de ciertas premisas.</li>
+              <li>Trabaja con verdad, falsedad, coherencia y validez.</li>
+              <li>Usa lenguaje preciso para evitar ambigüedades.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="tag">Matemática</div>
+            <h3>¿Qué es?</h3>
+            <ul class="clean">
+              <li>Estudia números, formas, medidas, variación y relaciones.</li>
+              <li>Permite modelar fenómenos del mundo real.</li>
+              <li>Fortalece el pensamiento abstracto y el razonamiento cuantitativo.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <div class="tag">Aplicación</div>
+            <h3>En Obstetricia</h3>
+            <ul class="clean">
+              <li>Interpretación de signos y síntomas.</li>
+              <li>Lectura de indicadores clínicos y tablas.</li>
+              <li>Toma de decisiones basada en condiciones y evidencia.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="grid-2" style="margin-top:18px; align-items:start">
+          <div class="card chart-wrap">
+            <h3 style="margin-top:0">Gráfico 1. Habilidades que activa esta unidad</h3>
+            <canvas id="skillsChart" width="520" height="290" aria-label="Gráfico de barras sobre habilidades"></canvas>
+            <p class="mini-note">El objetivo no es memorizar símbolos, sino aprender a pensar con claridad.</p>
+          </div>
+          <div class="card">
+            <h3>Características centrales</h3>
+            <ul class="clean">
+              <li><strong>Claridad:</strong> evita interpretaciones confusas.</li>
+              <li><strong>Rigor:</strong> exige justificar cada paso.</li>
+              <li><strong>Consistencia:</strong> no admite contradicciones internas.</li>
+              <li><strong>Abstracción:</strong> permite representar situaciones reales con símbolos.</li>
+              <li><strong>Aplicabilidad:</strong> se usa en ciencias de la salud, estadística y toma de decisiones.</li>
+            </ul>
+            <div style="margin-top:14px; padding:14px; border-radius:16px; background:rgba(74,222,128,.08); border:1px solid rgba(74,222,128,.18)">
+              <strong>Ejemplo obstétrico:</strong> “Si la gestante presenta presión arterial elevada y proteinuria, entonces se requiere valoración inmediata”. Aquí aparece una estructura lógica del tipo <em>si… entonces…</em>.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proposiciones">
+      <div class="container">
+        <h2 class="section-title">1.2 Proposiciones</h2>
+        <p class="section-sub">Una proposición es un enunciado declarativo que puede ser verdadero o falso, pero no ambas cosas a la vez.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>¿Qué sí es proposición?</h3>
+            <ul class="clean">
+              <li>“La temperatura corporal es de 38 °C”.</li>
+              <li>“2 + 3 = 5”.</li>
+              <li>“La paciente tiene 39 semanas de gestación”.</li>
+            </ul>
+            <h3 style="margin-top:18px">¿Qué no es proposición?</h3>
+            <ul class="clean">
+              <li>“¿Cuántas semanas tiene la paciente?” (pregunta)</li>
+              <li>“Tome la presión arterial” (orden)</li>
+              <li>“¡Qué buen resultado!” (exclamación)</li>
+            </ul>
+          </div>
+          <div class="card chart-wrap">
+            <h3 style="margin-top:0">Gráfico 2. Proposición vs. no proposición</h3>
+            <canvas id="propChart" width="520" height="290" aria-label="Comparación entre proposición y no proposición"></canvas>
+            <p class="mini-note">La clave es preguntarse: <strong>¿puede tener valor de verdad?</strong></p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Ejemplos simbólicos</h3>
+          <p><strong>p:</strong> “La gestante presenta sangrado vaginal”.<br>
+             <strong>q:</strong> “La paciente debe ser remitida de inmediato”.</p>
+          <p class="mini-note">Con estas letras podemos construir razonamientos más complejos sin repetir frases largas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="operadores">
+      <div class="container">
+        <h2 class="section-title">1.3 Operadores lógicos básicos</h2>
+        <p class="section-sub">Los operadores conectan proposiciones para formar enunciados compuestos.</p>
+
+        <div class="operator-grid">
+          <div class="operator">
+            <div class="symbol">¬</div>
+            <h3>Negación</h3>
+            <p>Invierte el valor de verdad.</p>
+            <p class="mini-note"><strong>Ejemplo:</strong> ¬p = “La gestante <u>no</u> presenta sangrado”.</p>
+          </div>
+          <div class="operator">
+            <div class="symbol">∧</div>
+            <h3>Conjunción</h3>
+            <p>“y” lógico. Solo es verdadera si ambas proposiciones son verdaderas.</p>
+            <p class="mini-note"><strong>Ejemplo:</strong> p ∧ q.</p>
+          </div>
+          <div class="operator">
+            <div class="symbol">∨</div>
+            <h3>Disyunción</h3>
+            <p>“o” lógico. Es verdadera si al menos una proposición es verdadera.</p>
+            <p class="mini-note"><strong>Ejemplo:</strong> “Tiene contracciones o presenta ruptura de membranas”.</p>
+          </div>
+          <div class="operator">
+            <div class="symbol">→</div>
+            <h3>Condicional</h3>
+            <p>“Si… entonces…”. Relaciona una condición con una consecuencia.</p>
+            <p class="mini-note"><strong>Ejemplo:</strong> p → q.</p>
+          </div>
+        </div>
+
+        <div class="grid-2" style="margin-top:18px; align-items:start">
+          <div class="card">
+            <h3>Tabla de verdad básica</h3>
+            <table class="logic-table">
+              <thead>
+                <tr><th>p</th><th>q</th><th>p ∧ q</th><th>p ∨ q</th><th>p → q</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="true">V</td><td class="true">V</td><td class="true">V</td><td class="true">V</td><td class="true">V</td></tr>
+                <tr><td class="true">V</td><td class="false">F</td><td class="false">F</td><td class="true">V</td><td class="false">F</td></tr>
+                <tr><td class="false">F</td><td class="true">V</td><td class="false">F</td><td class="true">V</td><td class="true">V</td></tr>
+                <tr><td class="false">F</td><td class="false">F</td><td class="false">F</td><td class="false">F</td><td class="true">V</td></tr>
+              </tbody>
+            </table>
+            <p class="mini-note" style="margin-top:10px">Recuerda: el condicional solo es falso cuando la condición se cumple pero la consecuencia no.</p>
+          </div>
+          <div class="card chart-wrap">
+            <h3 style="margin-top:0">Gráfico 3. Resultado de los operadores</h3>
+            <canvas id="truthChart" width="520" height="290" aria-label="Frecuencia de verdad por operador"></canvas>
+            <p class="mini-note">De las cuatro combinaciones posibles de p y q, la conjunción es verdadera en 1; la disyunción en 3; y el condicional en 3.</p>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>Ejemplo aplicado a Obstetricia</h3>
+          <p><strong>p:</strong> “La gestante tiene contracciones regulares”.<br>
+             <strong>q:</strong> “La dilatación cervical progresa”.</p>
+          <ul class="clean">
+            <li><strong>p ∧ q:</strong> Hay contracciones regulares <em>y</em> progresa la dilatación.</li>
+            <li><strong>p ∨ q:</strong> Hay contracciones regulares <em>o</em> progresa la dilatación.</li>
+            <li><strong>p → q:</strong> Si hay contracciones regulares, entonces progresa la dilatación.</li>
+            <li><strong>¬p:</strong> No hay contracciones regulares.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="actividad">
+      <div class="container">
+        <h2 class="section-title">Actividad rápida de concentración</h2>
+        <p class="section-sub">Haz clic para comprobar la respuesta y reforzar el aprendizaje.</p>
+        <div class="quiz">
+          <div class="question">
+            <strong>1.</strong> “La paciente está en trabajo de parto”. ¿Es una proposición?
+            <div><button onclick="toggleAnswer('a1')">Ver respuesta</button></div>
+            <div class="answer" id="a1">Sí. Es un enunciado declarativo y puede ser verdadero o falso.</div>
+          </div>
+          <div class="question">
+            <strong>2.</strong> Si p = “Hay fiebre” y q = “Se requiere evaluación médica”, ¿qué significa p → q?
+            <div><button onclick="toggleAnswer('a2')">Ver respuesta</button></div>
+            <div class="answer" id="a2">“Si hay fiebre, entonces se requiere evaluación médica”. Es una relación condicional.</div>
+          </div>
+          <div class="question">
+            <strong>3.</strong> Si p es falsa, ¿qué ocurre con ¬p?
+            <div><button onclick="toggleAnswer('a3')">Ver respuesta</button></div>
+            <div class="answer" id="a3">La negación ¬p será verdadera.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="referencias">
+      <div class="container">
+        <h2 class="section-title">Referencias verificadas con DOI</h2>
+        <p class="section-sub">Fuentes seleccionadas para sustentar la relación entre lógica, razonamiento y matemática en educación superior.</p>
+        <div class="card">
+          <ol class="refs">
+            <li>Fehér, Z., Jaruska, L., Szarka, K., & Tóthová Tarová, E. (2023). <em>Students’ propositional logic thinking in higher education from the perspective of disciplines</em>. Frontiers in Education, 8. DOI: <a href="https://doi.org/10.3389/feduc.2023.1247653" target="_blank" rel="noopener">10.3389/feduc.2023.1247653</a></li>
+            <li>Debrenti, E. (2023). <em>Basic logical operation skills and logical reasoning competences of university students in a Western region of Romania</em>. Frontiers in Education, 8. DOI: <a href="https://doi.org/10.3389/feduc.2023.1273602" target="_blank" rel="noopener">10.3389/feduc.2023.1273602</a></li>
+            <li>Mouro, A. P., & Martins, A. (2023). <em>Bringing Together Mathematics and Philosophy with Logic and Poly-Universe</em>. Education Sciences, 13(4), 356. DOI: <a href="https://doi.org/10.3390/educsci13040356" target="_blank" rel="noopener">10.3390/educsci13040356</a></li>
+            <li>Hanna, G. (2020). <em>Mathematical Proof, Argumentation, and Reasoning</em>. In Encyclopedia of Mathematics Education. Springer. DOI: <a href="https://doi.org/10.1007/978-3-030-15789-0_102" target="_blank" rel="noopener">10.1007/978-3-030-15789-0_102</a></li>
+            <li>Durand-Guerrier, V. (2015). <em>Reasoning, Proof and Proving in Mathematics Education</em>. In The Proceedings of the 12th International Congress on Mathematical Education. Springer. DOI: <a href="https://doi.org/10.1007/978-3-319-12688-3_39" target="_blank" rel="noopener">10.1007/978-3-319-12688-3_39</a></li>
+            <li>Jin, H. (2023). <em>Propositional Logic</em>. In <em>Mathematical Foundation of GIS</em>. World Scientific. DOI: <a href="https://doi.org/10.1142/9789811292880_0002" target="_blank" rel="noopener">10.1142/9789811292880_0002</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      Material elaborado en formato web para apoyo docente. Recomendación didáctica: usar en clase con preguntas orales breves cada 3–5 minutos para sostener la atención del grupo.
+    </div>
+  </footer>
+
+  <script>
+    function toggleAnswer(id){
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function drawBarChart(canvasId, labels, values){
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h);
+
+      const padding = {top: 24, right: 20, bottom: 58, left: 50};
+      const chartW = w - padding.left - padding.right;
+      const chartH = h - padding.top - padding.bottom;
+      const max = Math.max(...values) * 1.15;
+      const barW = chartW / values.length * 0.58;
+
+      ctx.strokeStyle = 'rgba(255,255,255,.15)';
+      ctx.fillStyle = 'rgba(255,255,255,.75)';
+      ctx.font = '12px Inter, Arial';
+      ctx.beginPath();
+      ctx.moveTo(padding.left, padding.top);
+      ctx.lineTo(padding.left, padding.top + chartH);
+      ctx.lineTo(padding.left + chartW, padding.top + chartH);
+      ctx.stroke();
+
+      for(let i=0;i<5;i++){
+        const y = padding.top + chartH - (chartH/4)*i;
+        ctx.strokeStyle = 'rgba(255,255,255,.08)';
+        ctx.beginPath(); ctx.moveTo(padding.left, y); ctx.lineTo(padding.left + chartW, y); ctx.stroke();
+      }
+
+      values.forEach((v,i)=>{
+        const x = padding.left + (chartW / values.length) * i + ((chartW / values.length)-barW)/2;
+        const barH = (v/max) * chartH;
+        const y = padding.top + chartH - barH;
+        const grad = ctx.createLinearGradient(x,y,x,y+barH);
+        grad.addColorStop(0,'#6ee7f9');
+        grad.addColorStop(1,'#a78bfa');
+        roundRect(ctx,x,y,barW,barH,12,grad);
+        ctx.fillStyle = '#f4f7ff';
+        ctx.fillText(v.toString(), x + barW/2 - 6, y - 8);
+        ctx.fillStyle = 'rgba(255,255,255,.75)';
+        wrapText(ctx, labels[i], x + barW/2, padding.top + chartH + 18, 72, 14);
+      });
+    }
+
+    function drawBinaryChart(canvasId, trueCount, falseCount){
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+      const w = canvas.width, h = canvas.height;
+      ctx.clearRect(0,0,w,h);
+      const cx = 145, cy = h/2, r = 88;
+      const total = trueCount + falseCount;
+      const angleTrue = (trueCount/total) * Math.PI * 2;
+
+      ctx.lineWidth = 28;
+      ctx.strokeStyle = 'rgba(255,255,255,.10)';
+      ctx.beginPath(); ctx.arc(cx,cy,r,0,Math.PI*2); ctx.stroke();
+      ctx.strokeStyle = '#6ee7f9';
+      ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2,-Math.PI/2 + angleTrue); ctx.stroke();
+      ctx.strokeStyle = '#fb7185';
+      ctx.beginPath(); ctx.arc(cx,cy,r,-Math.PI/2 + angleTrue,-Math.PI/2 + Math.PI*2); ctx.stroke();
+
+      ctx.fillStyle = '#f4f7ff';
+      ctx.font = 'bold 18px Inter, Arial';
+      ctx.fillText('Valor de verdad', 275, 72);
+      ctx.font = '14px Inter, Arial';
+      ctx.fillStyle = 'rgba(255,255,255,.8)';
+      ctx.fillText('● Verdadero: enunciados declarativos', 275, 124);
+      ctx.fillText('● No proposición: sin valor de verdad', 275, 164);
+      ctx.fillText(`Ejemplo guía:  ${trueCount} vs ${falseCount}`, 275, 216);
+      ctx.fillStyle = '#6ee7f9'; ctx.fillText('●', 277, 124);
+      ctx.fillStyle = '#fb7185'; ctx.fillText('●', 277, 164);
+    }
+
+    function drawTruthCounts(canvasId){
+      drawBarChart(canvasId,['Conjunción p∧q','Disyunción p∨q','Condicional p→q'],[1,3,3]);
+    }
+
+    function roundRect(ctx,x,y,w,h,r,fill){
+      ctx.beginPath();
+      ctx.moveTo(x+r,y);
+      ctx.arcTo(x+w,y,x+w,y+h,r);
+      ctx.arcTo(x+w,y+h,x,y+h,r);
+      ctx.arcTo(x,y+h,x,y,r);
+      ctx.arcTo(x,y,x+w,y,r);
+      ctx.closePath();
+      ctx.fillStyle = fill;
+      ctx.fill();
+    }
+
+    function wrapText(ctx, text, x, y, maxWidth, lineHeight){
+      const words = text.split(' ');
+      let line='';
+      let lines=[];
+      for(let n=0;n<words.length;n++){
+        const testLine = line + words[n] + ' ';
+        if(ctx.measureText(testLine).width > maxWidth && n > 0){
+          lines.push(line.trim());
+          line = words[n] + ' ';
+        } else {
+          line = testLine;
+        }
+      }
+      lines.push(line.trim());
+      lines.forEach((ln,idx)=>{
+        const textW = ctx.measureText(ln).width;
+        ctx.fillText(ln, x - textW/2, y + idx*lineHeight);
+      });
+    }
+
+    drawBarChart('skillsChart', ['Análisis lógico','Precisión verbal','Razonamiento cuantitativo','Decisión clínica'], [82, 74, 88, 91]);
+    drawBinaryChart('propChart', 3, 2);
+    drawTruthCounts('truthChart');
+    window.addEventListener('resize', ()=>{
+      drawBarChart('skillsChart', ['Análisis lógico','Precisión verbal','Razonamiento cuantitativo','Decisión clínica'], [82, 74, 88, 91]);
+      drawBinaryChart('propChart', 3, 2);
+      drawTruthCounts('truthChart');
+    });
+  </script>
+</body>
+</html>
