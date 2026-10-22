@@ -1,0 +1,15 @@
+﻿Conjunto,Intervalo,Limite_Inferior,Limite_Superior,Frecuencia_Absoluta,Unidad
+Edad_Materna,15-19,15,19,6,anios
+Edad_Materna,20-24,20,24,15,anios
+Edad_Materna,25-29,25,29,14,anios
+Edad_Materna,30-34,30,34,9,anios
+Edad_Materna,35-39,35,39,6,anios
+Controles_Prenatales,1-2,1,2,4,controles
+Controles_Prenatales,3-4,3,4,9,controles
+Controles_Prenatales,5-6,5,6,18,controles
+Controles_Prenatales,7-8,7,8,9,controles
+Peso_Neonatal,2000-2499,2000,2499,5,gramos
+Peso_Neonatal,2500-2999,2500,2999,12,gramos
+Peso_Neonatal,3000-3499,3000,3499,24,gramos
+Peso_Neonatal,3500-3999,3500,3999,14,gramos
+Peso_Neonatal,4000-4499,4000,4499,5,gramos

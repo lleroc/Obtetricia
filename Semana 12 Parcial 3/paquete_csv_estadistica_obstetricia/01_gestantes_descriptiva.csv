@@ -1,0 +1,81 @@
+﻿ID_Gestante,Edad_Materna_anios,Semana_Gestacional,Controles_Prenatales,Tipo_Parto_Previsto,Nivel_Riesgo,Hemoglobina_g_dL,Presion_Sistolica_mmHg,Presion_Diastolica_mmHg,Peso_Materno_kg,Zona_Residencia,Asistencia_Preparacion_Parto
+G001,35,35,7,Vaginal,Medio,11.5,108,78,62.6,Urbana,No
+G002,27,38,8,Cesarea,Bajo,11.6,104,69,52.9,Urbana,Si
+G003,18,36,7,Vaginal,Bajo,11.2,137,78,45.0,Urbana,Si
+G004,40,38,8,Vaginal,Medio,9.6,93,67,66.9,Urbana,Si
+G005,36,25,4,Por definir,Medio,13.6,106,72,77.5,Rural,Si
+G006,32,29,6,Por definir,Medio,10.3,133,76,59.7,Rural,Si
+G007,29,29,4,Por definir,Medio,10.2,128,69,65.8,Urbana,Si
+G008,29,36,7,Vaginal,Bajo,13.1,124,65,61.0,Rural,Si
+G009,36,36,7,Vaginal,Medio,11.8,120,79,77.8,Rural,Si
+G010,30,33,6,Por definir,Bajo,11.5,118,84,70.1,Rural,Si
+G011,29,33,6,Por definir,Bajo,12.3,130,86,59.2,Urbana,No
+G012,32,36,7,Vaginal,Bajo,12.2,121,76,72.1,Urbana,Si
+G013,24,23,3,Por definir,Bajo,13.9,92,80,64.1,Urbana,Si
+G014,24,32,6,Por definir,Bajo,10.6,111,54,76.1,Rural,Si
+G015,20,36,6,Vaginal,Bajo,12.2,118,77,68.6,Rural,Si
+G016,31,30,6,Por definir,Bajo,11.3,110,65,75.4,Urbana,No
+G017,24,38,8,Cesarea,Bajo,12.3,107,63,72.2,Rural,No
+G018,20,37,7,Vaginal,Bajo,13.8,104,82,55.4,Urbana,Si
+G019,29,35,6,Cesarea,Bajo,12.0,117,73,62.3,Urbana,Si
+G020,19,40,7,Cesarea,Bajo,11.5,135,73,61.3,Rural,Si
+G021,20,25,4,Por definir,Medio,13.0,105,94,64.2,Urbana,Si
+G022,23,29,5,Por definir,Bajo,12.4,117,64,45.0,Urbana,No
+G023,19,31,6,Por definir,Bajo,13.6,132,75,52.8,Urbana,Si
+G024,22,27,4,Por definir,Medio,10.3,115,64,48.7,Urbana,Si
+G025,25,32,7,Por definir,Bajo,11.7,133,83,76.5,Rural,Si
+G026,29,27,4,Por definir,Bajo,12.4,95,63,58.9,Urbana,Si
+G027,35,40,7,Cesarea,Medio,11.7,113,75,73.2,Urbana,Si
+G028,19,22,4,Por definir,Bajo,10.9,106,80,64.4,Rural,No
+G029,27,24,4,Por definir,Bajo,10.9,123,78,58.8,Urbana,Si
+G030,30,26,4,Por definir,Bajo,12.1,125,77,63.3,Rural,Si
+G031,24,22,4,Por definir,Bajo,12.5,113,77,65.1,Urbana,Si
+G032,22,33,7,Por definir,Bajo,12.6,115,80,68.5,Urbana,No
+G033,21,23,4,Por definir,Bajo,13.1,102,73,72.9,Urbana,No
+G034,28,27,5,Por definir,Bajo,12.7,129,65,62.4,Rural,Si
+G035,33,26,4,Por definir,Bajo,11.6,106,74,61.9,Rural,Si
+G036,30,34,6,Vaginal,Bajo,11.0,122,65,80.1,Rural,Si
+G037,34,22,4,Por definir,Bajo,12.2,125,81,64.1,Urbana,No
+G038,22,31,6,Por definir,Bajo,10.6,119,68,53.8,Urbana,Si
+G039,39,22,4,Por definir,Medio,11.3,122,77,67.9,Urbana,Si
+G040,28,37,7,Vaginal,Bajo,11.5,111,70,72.7,Urbana,Si
+G041,32,35,7,Vaginal,Bajo,12.1,93,82,58.2,Rural,Si
+G042,22,39,8,Vaginal,Bajo,14.3,133,69,72.2,Urbana,Si
+G043,27,21,3,Por definir,Bajo,11.6,119,68,73.9,Urbana,Si
+G044,23,33,6,Por definir,Bajo,11.6,111,71,64.4,Urbana,No
+G045,28,34,8,Cesarea,Bajo,11.5,95,54,69.4,Urbana,No
+G046,41,29,5,Por definir,Medio,10.4,112,65,73.9,Rural,No
+G047,24,20,3,Por definir,Bajo,12.3,99,55,61.2,Urbana,No
+G048,30,23,4,Por definir,Medio,12.8,150,84,58.5,Rural,Si
+G049,33,29,5,Por definir,Medio,11.6,141,77,79.8,Urbana,Si
+G050,29,27,5,Por definir,Bajo,11.2,117,73,78.6,Urbana,Si
+G051,28,38,8,Vaginal,Bajo,11.6,134,63,81.6,Rural,Si
+G052,27,33,7,Por definir,Medio,8.7,121,78,67.0,Urbana,No
+G053,30,26,4,Por definir,Medio,10.1,113,73,54.6,Urbana,Si
+G054,22,32,6,Por definir,Bajo,10.6,133,68,83.6,Rural,No
+G055,33,22,4,Por definir,Bajo,13.5,130,86,76.4,Rural,No
+G056,25,26,4,Por definir,Bajo,12.7,137,67,75.4,Rural,No
+G057,28,22,4,Por definir,Bajo,12.2,110,73,88.4,Urbana,No
+G058,35,28,5,Por definir,Medio,12.9,125,84,61.2,Rural,Si
+G059,21,25,4,Por definir,Bajo,11.2,129,64,59.1,Rural,No
+G060,29,29,5,Por definir,Bajo,11.5,135,83,65.2,Urbana,Si
+G061,25,20,3,Por definir,Bajo,12.5,117,82,73.8,Rural,No
+G062,25,20,3,Por definir,Bajo,12.0,116,62,67.5,Rural,Si
+G063,25,28,5,Por definir,Medio,11.9,147,58,60.3,Urbana,Si
+G064,17,36,6,Cesarea,Medio,11.2,121,65,51.1,Rural,No
+G065,38,36,7,Cesarea,Medio,10.2,126,58,64.1,Urbana,Si
+G066,38,25,4,Por definir,Medio,11.1,106,77,63.0,Rural,Si
+G067,32,25,3,Por definir,Bajo,10.5,114,55,75.5,Urbana,Si
+G068,28,28,5,Por definir,Medio,10.4,127,67,69.3,Urbana,No
+G069,34,35,6,Cesarea,Bajo,11.2,126,86,63.9,Rural,Si
+G070,24,35,7,Vaginal,Medio,14.1,145,59,76.5,Rural,No
+G071,20,25,5,Por definir,Bajo,12.9,126,79,75.7,Urbana,No
+G072,32,40,7,Vaginal,Bajo,13.6,119,84,71.1,Rural,No
+G073,21,31,7,Por definir,Bajo,12.3,108,70,68.3,Urbana,No
+G074,30,24,3,Por definir,Bajo,11.8,130,86,73.2,Urbana,Si
+G075,25,37,7,Vaginal,Bajo,11.5,127,65,69.0,Urbana,No
+G076,18,30,6,Por definir,Bajo,13.5,122,73,77.9,Rural,No
+G077,21,39,7,Vaginal,Bajo,11.6,93,67,74.5,Rural,Si
+G078,42,21,3,Por definir,Medio,12.0,136,85,64.3,Urbana,No
+G079,26,38,8,Vaginal,Bajo,10.9,124,70,72.9,Rural,Si
+G080,25,21,4,Por definir,Bajo,11.0,129,78,56.4,Rural,Si

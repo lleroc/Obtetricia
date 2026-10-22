@@ -1,0 +1,61 @@
+﻿ID_Gestante,Controles_Prenatales,Estado_Seguimiento,Nivel_Riesgo,Zona_Residencia,Asistio_Charla_Prenatal
+C001,6,Completo,Bajo,Rural,Si
+C002,5,En progreso,Alto,Urbana,Si
+C003,2,Incompleto,Medio,Urbana,Si
+C004,4,En progreso,Medio,Urbana,Si
+C005,5,En progreso,Bajo,Urbana,Si
+C006,8,Completo,Bajo,Urbana,Si
+C007,6,Completo,Bajo,Urbana,No
+C008,6,Completo,Bajo,Urbana,Si
+C009,3,Incompleto,Medio,Urbana,Si
+C010,8,Completo,Medio,Urbana,Si
+C011,4,En progreso,Bajo,Urbana,Si
+C012,2,Incompleto,Bajo,Urbana,Si
+C013,4,En progreso,Medio,Urbana,Si
+C014,8,Completo,Medio,Urbana,Si
+C015,6,Completo,Bajo,Rural,Si
+C016,7,Completo,Bajo,Urbana,Si
+C017,6,Completo,Alto,Rural,No
+C018,6,Completo,Bajo,Urbana,Si
+C019,3,Incompleto,Bajo,Urbana,Si
+C020,4,En progreso,Bajo,Urbana,No
+C021,5,En progreso,Bajo,Urbana,Si
+C022,5,En progreso,Bajo,Urbana,Si
+C023,6,Completo,Bajo,Urbana,No
+C024,5,En progreso,Medio,Urbana,Si
+C025,3,Incompleto,Medio,Rural,Si
+C026,6,Completo,Bajo,Rural,Si
+C027,5,En progreso,Bajo,Urbana,Si
+C028,3,Incompleto,Medio,Urbana,No
+C029,3,Incompleto,Bajo,Urbana,No
+C030,8,Completo,Alto,Urbana,Si
+C031,4,En progreso,Medio,Urbana,No
+C032,2,Incompleto,Bajo,Rural,No
+C033,4,En progreso,Bajo,Urbana,Si
+C034,5,En progreso,Bajo,Urbana,Si
+C035,4,En progreso,Alto,Urbana,No
+C036,4,En progreso,Alto,Urbana,Si
+C037,6,Completo,Bajo,Rural,No
+C038,3,Incompleto,Medio,Urbana,No
+C039,5,En progreso,Bajo,Urbana,Si
+C040,7,Completo,Medio,Urbana,Si
+C041,8,Completo,Bajo,Rural,No
+C042,7,Completo,Medio,Rural,No
+C043,4,En progreso,Alto,Urbana,Si
+C044,5,En progreso,Medio,Urbana,No
+C045,5,En progreso,Bajo,Urbana,Si
+C046,2,Incompleto,Alto,Urbana,Si
+C047,5,En progreso,Bajo,Rural,Si
+C048,5,En progreso,Bajo,Rural,Si
+C049,5,En progreso,Bajo,Rural,Si
+C050,7,Completo,Bajo,Rural,Si
+C051,7,Completo,Medio,Urbana,Si
+C052,5,En progreso,Bajo,Rural,Si
+C053,4,En progreso,Bajo,Rural,Si
+C054,7,Completo,Alto,Urbana,Si
+C055,6,Completo,Medio,Rural,Si
+C056,6,Completo,Medio,Urbana,No
+C057,7,Completo,Bajo,Rural,No
+C058,7,Completo,Bajo,Urbana,Si
+C059,6,Completo,Medio,Rural,No
+C060,3,Incompleto,Bajo,Urbana,Si

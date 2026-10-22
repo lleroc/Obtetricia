@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Materiales de Matemática y Estadística Aplicada para Obstetricia, organizados por semana.">
+  <title>Matemática y Estadística Aplicada | Obstetricia</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #18332f;
+      --muted: #5b706b;
+      --green: #176b5b;
+      --green-dark: #104d43;
+      --paper: #f4f7f2;
+      --card: #fff;
+      --line: #dce7df;
+      --accent: #e2f2e9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 16px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a { color: var(--green-dark); }
+
+    .hero {
+      padding: 4.5rem 1.25rem 3.75rem;
+      background: linear-gradient(135deg, #104d43, #227b66);
+      color: #fff;
+    }
+
+    .hero-content, main, footer {
+      width: min(100% - 2rem, 1080px);
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 .5rem;
+      color: #c5e8d6;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      line-height: 1.1;
+    }
+
+    .intro {
+      max-width: 650px;
+      margin: 1rem 0 0;
+      color: #e5f3eb;
+      font-size: 1.08rem;
+    }
+
+    main { padding-block: 2.5rem 4rem; }
+
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toolbar p { margin: 0; color: var(--muted); }
+
+    .search {
+      width: min(100%, 340px);
+      padding: .75rem 1rem;
+      border: 1px solid var(--line);
+      border-radius: .75rem;
+      background: var(--card);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .search:focus-visible, a:focus-visible {
+      outline: 3px solid #8ccdb0;
+      outline-offset: 3px;
+    }
+
+    .weeks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+      gap: 1rem;
+    }
+
+    .week {
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 1rem;
+      background: var(--card);
+      box-shadow: 0 5px 18px rgb(24 51 47 / 4%);
+    }
+
+    .week h2 {
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      margin: 0 0 .8rem;
+      font-size: 1.1rem;
+    }
+
+    .week-number {
+      display: inline-grid;
+      width: 2rem;
+      height: 2rem;
+      place-items: center;
+      border-radius: .65rem;
+      background: var(--accent);
+      color: var(--green-dark);
+      font-size: .85rem;
+    }
+
+    .week ul {
+      display: grid;
+      gap: .5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .week li { overflow-wrap: anywhere; }
+
+    .week a {
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .week a:hover { color: var(--green); }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 1.5rem;
+      border-radius: .75rem;
+      background: var(--accent);
+      color: var(--green-dark);
+      text-align: center;
+    }
+
+    footer {
+      padding-block: 1.5rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding-block: 3.25rem; }
+      .toolbar { align-items: stretch; flex-direction: column; }
+      .search { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Obstetricia · Recursos del curso</p>
+      <h1>Matemática y Estadística Aplicada</h1>
+      <p class="intro">Presentaciones, lecturas, ejercicios y bases de datos organizados por semana para encontrar fácilmente cada material.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="toolbar">
+      <p>Explora los materiales disponibles del curso.</p>
+      <label>
+        <span class="eyebrow" style="position:absolute;clip:rect(0,0,0,0);">Buscar materiales</span>
+        <input class="search" type="search" placeholder="Buscar por nombre o semana…" aria-label="Buscar materiales por nombre o semana">
+      </label>
+    </div>
+
+    <div class="weeks" id="weeks">
+      <section class="week" aria-labelledby="week-1">
+        <h2 id="week-1"><span class="week-number">1</span> Semana 1</h2>
+        <ul>
+          <li><a href="Semana%201/Semama_1.html">Semama_1.html</a></li>
+          <li><a href="Semana%201/Semana%201%20Ejercicios.docx">Semana 1 Ejercicios.docx</a></li>
+          <li><a href="Semana%201/Semana%201%20Logica%20Matematica.pdf">Semana 1 Logica Matematica.pdf</a></li>
+          <li><a href="Semana%201/Semana%201%20Logica%20Matematica.pptx">Semana 1 Logica Matematica.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-2">
+        <h2 id="week-2"><span class="week-number">2</span> Semana 2</h2>
+        <ul>
+          <li><a href="Semana%202/Semana%202%20Ejercicios.pdf">Semana 2 Ejercicios.pdf</a></li>
+          <li><a href="Semana%202/Semana%202%20Tablas_Conversiones.pdf">Semana 2 Tablas_Conversiones.pdf</a></li>
+          <li><a href="Semana%202/Semana%202%20Tablas_Conversiones.pptx">Semana 2 Tablas_Conversiones.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-3">
+        <h2 id="week-3"><span class="week-number">3</span> Semana 3</h2>
+        <ul>
+          <li><a href="Semana%203/Ejercicos%20Nivel%20Dios.docx">Ejercicos Nivel Dios.docx</a></li>
+          <li><a href="Semana%203/Semana%203%20-%20Razonamiento%20ejercicios.docx">Semana 3 - Razonamiento ejercicios.docx</a></li>
+          <li><a href="Semana%203/Semana%203%20Lenguaje%20Simbolico%20.pptx">Semana 3 Lenguaje Simbolico .pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-5">
+        <h2 id="week-5"><span class="week-number">5</span> Semana 5</h2>
+        <ul>
+          <li><a href="Semana%205/EJERCICIOS%20DE%20TEORI%CC%81A%20DE%20CONJUNTOS.pdf">EJERCICIOS DE TEORÍA DE CONJUNTOS.pdf</a></li>
+          <li><a href="Semana%205/Lista%20de%20si%CC%81mbolos%20matema%CC%81ticos%20aplicados%20en%20teori%CC%81a%20de%20conjuntos.docx">Lista de símbolos matemáticos aplicados en teoría de conjuntos.docx</a></li>
+          <li><a href="Semana%205/Lista%20de%20si%CC%81mbolos%20matema%CC%81ticos.pdf">Lista de símbolos matemáticos.pdf</a></li>
+          <li><a href="Semana%205/Presentacion_Obstetricia_Teoria_Conjuntos_Relaciones_Funciones%20%20-%20%20Reparado.pptx">Presentacion_Obstetricia_Teoria_Conjuntos_Relaciones_Funciones - Reparado.pptx</a></li>
+          <li><a href="Semana%205/Presentacion_Obstetricia_Teoria_Conjuntos_Relaciones_Funciones.pdf">Presentacion_Obstetricia_Teoria_Conjuntos_Relaciones_Funciones.pdf</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-6">
+        <h2 id="week-6"><span class="week-number">6</span> Semana 6</h2>
+        <ul>
+          <li><a href="Semana%206/Presentacion_Obstetricia_Geometria_Analitica_Linea_Recta.pptx">Presentacion_Obstetricia_Geometria_Analitica_Linea_Recta.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-7">
+        <h2 id="week-7"><span class="week-number">7</span> Semana 7</h2>
+        <ul>
+          <li><a href="Semana%207/Presentacion_Obstetricia_Parabola_Ejercicios_Practicos.pptx">Presentacion_Obstetricia_Parabola_Ejercicios_Practicos.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-9">
+        <h2 id="week-9"><span class="week-number">9</span> Semana 9</h2>
+        <ul>
+          <li><a href="Semana%209/Estadistica_Descriptiva%20.pdf">Estadistica_Descriptiva .pdf</a></li>
+          <li><a href="Semana%209/Estadistica_Descriptiva%20.pptx">Estadistica_Descriptiva .pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-10">
+        <h2 id="week-10"><span class="week-number">10</span> Semana 10</h2>
+        <ul>
+          <li><a href="Semana%2010/Presentacion_Obstetricia_Representacion_Grafica_Tendencia_Central.pptx">Presentacion_Obstetricia_Representacion_Grafica_Tendencia_Central.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-11">
+        <h2 id="week-11"><span class="week-number">11</span> Semana 11</h2>
+        <ul>
+          <li><a href="Semana%2011/Semana%2011%20Presentacion_Obstetricia_Medidas_Dispersion.pptx">Semana 11 Presentacion_Obstetricia_Medidas_Dispersion.pptx</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-12">
+        <h2 id="week-12"><span class="week-number">12</span> Semana 12 · Parcial 3</h2>
+        <ul>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia.zip">paquete_csv_estadistica_obstetricia.zip</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/00_catalogo_datasets.csv">00_catalogo_datasets.csv</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/01_gestantes_descriptiva.csv">01_gestantes_descriptiva.csv</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/02_frecuencias_controles_prenatales.csv">02_frecuencias_controles_prenatales.csv</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/03_seguimiento_fetal_longitudinal.csv">03_seguimiento_fetal_longitudinal.csv</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/04_comparacion_dispersion_grupos.csv">04_comparacion_dispersion_grupos.csv</a></li>
+          <li><a href="Semana%2012%20Parcial%203/paquete_csv_estadistica_obstetricia/05_datos_agrupados_frecuencias.csv">05_datos_agrupados_frecuencias.csv</a></li>
+        </ul>
+      </section>
+
+      <section class="week" aria-labelledby="week-13">
+        <h2 id="week-13"><span class="week-number">13</span> Semana 13</h2>
+        <ul>
+          <li><a href="Semana%2013/Conceptos_Probabilidad_Distribuciones.pdf">Conceptos_Probabilidad_Distribuciones.pdf</a></li>
+          <li><a href="Semana%2013/Conceptos_Probabilidad_Distribuciones.pptx">Conceptos_Probabilidad_Distribuciones.pptx</a></li>
+          <li><a href="Semana%2013/Estadistica_Inferencial_Probabilidades.pdf">Estadistica_Inferencial_Probabilidades.pdf</a></li>
+          <li><a href="Semana%2013/Estadistica_Inferencial_Probabilidades.pptx">Estadistica_Inferencial_Probabilidades.pptx</a></li>
+          <li><a href="Semana%2013/Estimacion_Hipotesis_Errores%20%20-%20%20Reparado.pdf">Estimacion_Hipotesis_Errores - Reparado.pdf</a></li>
+          <li><a href="Semana%2013/Estimacion_Hipotesis_Errores%20%20-%20%20Reparado.pptx">Estimacion_Hipotesis_Errores - Reparado.pptx</a></li>
+          <li><a href="Semana%2013/Estimacion_Hipotesis_Errores.pptx">Estimacion_Hipotesis_Errores.pptx</a></li>
+          <li><a href="Semana%2013/Pruebas_Hipotesis_Medias_Proporciones.pptx">Pruebas_Hipotesis_Medias_Proporciones.pptx</a></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <footer>Material educativo organizado por semanas. Los archivos XML y los archivos de la raíz están excluidos del repositorio mediante <code>.gitignore</code>.</footer>
+
+  <script>
+    const search = document.querySelector(".search");
+    const weeks = [...document.querySelectorAll(".week")];
+    const list = document.querySelector("#weeks");
+    const emptyMessage = document.createElement("p");
+    emptyMessage.className = "empty";
+    emptyMessage.textContent = "No se encontraron materiales con esa búsqueda.";
+    emptyMessage.hidden = true;
+    list.append(emptyMessage);
+
+    search.addEventListener("input", () => {
+      const query = search.value.trim().toLocaleLowerCase("es");
+      let visibleCount = 0;
+
+      for (const week of weeks) {
+        const visible = week.textContent.toLocaleLowerCase("es").includes(query);
+        week.hidden = !visible;
+        if (visible) visibleCount += 1;
+      }
+
+      emptyMessage.hidden = visibleCount > 0;
+    });
+  </script>
+</body>
+</html>

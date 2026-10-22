@@ -1,0 +1,6 @@
+﻿Archivo,Filas_Datos,Uso_Principal,Calculos_Sugeridos
+01_gestantes_descriptiva.csv,80,"Estadistica descriptiva general, clasificacion de variables, graficos, media, mediana y moda",frecuencias; porcentajes; media; mediana; moda; rango; histogramas; barras; circular
+02_frecuencias_controles_prenatales.csv,60,Distribucion de frecuencias de controles prenatales,fi; hi; porcentaje; Fi; porcentaje acumulado; moda; mediana
+03_seguimiento_fetal_longitudinal.csv,72,Seguimiento longitudinal y relacion entre variables cuantitativas,media por semana; variacion; rango; linea; dispersion; porcentaje de cambio
+04_comparacion_dispersion_grupos.csv,40,Comparacion de homogeneidad y dispersion entre grupos,media; rango; varianza muestral; desviacion estandar; coeficiente de variacion
+05_datos_agrupados_frecuencias.csv,14,Tablas de datos agrupados por intervalos,marca de clase; hi; porcentaje; Fi; porcentaje acumulado
