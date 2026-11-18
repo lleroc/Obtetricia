@@ -1,0 +1,15 @@
+1. Sea p: “La gestante tiene glucemia en ayunas ≥ 92 mg/dL” y q: “Se le diagnostica diabetes gestacional”. 
+La norma del servicio es p → q. Escriba la recíproca y la contrarrecíproca de la norma, 
+en lenguaje simbólico y en lenguaje común, y determine cuál de las dos es equivalente a la norma, 
+justificándolo con un caso.
+
+2. Una gestante pesó 62 kg en la semana 20, 63 kg en la semana 22, 
+64 kg en la semana 24 y 65 kg en la semana 26. Encuentre el término general del peso según el número de control. 
+Calcule el peso esperado en la semana 36 si el patrón continúa con controles cada 2 
+semanas e indique qué tipo de razonamiento utilizó y si la predicción es segura.
+
+3. En un mes, el hospital A atendió 150 partos, 45 de ellos por cesárea, y el 
+hospital B atendió 90 partos, 36 de ellos por cesárea. Calcule el porcentaje de 
+cesáreas de cada hospital y explique si es correcto afirmar que el hospital A hace más cesáreas 
+porque 45 es mayor que 36. Escriba en lenguaje simbólico la condición “el porcentaje de cesáreas c 
+no debe superar el 15 %” y determine si cada hospital la cumple.
